@@ -1,4 +1,4 @@
-import { AppState } from './../reducers/index';
+import { AppState } from '../../reducers';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
@@ -52,12 +52,6 @@ export class LoginComponent implements OnInit {
         console.log(user);
         // Save the user profile inside the store
         this.store.dispatch(login({user})
-          // {
-          //   type: 'Login Action',
-          //   payload: {
-          //     user
-          //   }
-          // }
         )
         /*
           The dispatch method is the only way to modify the data inside the store;
