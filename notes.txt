@@ -1,0 +1,47 @@
+NgRx
+
+Atualmente o lifecycle da data está ligado ao lifecycle do componente, por isso toda vez que o componente é acessado é feita uma chamada ao back-end
+
+Objetivo:
+Criar uma aplicação com uma UX melhor, que não faça a chamada http constantemente.
+Para isso será criada uma in-memory database no client-side que guardará a data enquanto a APLICAÇÃO estiver ativa, independente de COMPONENTES.
+Além disso, evitar de mostrar o loading a casa transição entre componentes, manter a data que foi trazida do servidor durante um temnpo para a transiçãoser imediata. Sem chamar novamente o server caso a data não tenha sido modificada.
+Caso haja modificação na data, a mudança deve ser exibida imediatamente para que a mudança seja salva por trás dos panos sem afetar a UX.
+Implementar um state management solution.
+
+NgRx -> an Angular specific state management solution that will allow us to create a client side database with our data, and will minimize the number of HTTP requests done to the server
+
+Auth module is not lazy loaded
+
+Exemplo de comando para criar um store->  ng g store auth/Auth --module auth.module.ts
+
+
+Reducer
+a function that calculates a new version of the state based on the previous state and the action that got dispatched
+a funcition that we need to pass to the store so that the store knows how to react to a given action
+
+
+Store
+it's an in-memory database that contains data that is going to get shared by multiple components of the application.
+
+
+one way to convert an expression to its true or false equivlent is to negate it two times
+
+
+Select (NgRx) -> map the values and eliminates duplicates values
+
+
+createSelector
+we can create mapping function with memory by using the createSelector API from NgRx
+needs at minimum two arguments, the map function and the projector function
+(the projector function takes all the slices of state that we selected using the mapping function)
+
+Selector -> a plain mapping function with memory
+
+
+createFeatureSelector
+has only one property, the name of the the property that we want to access in the global stage
+a type safe version of the mapping function
+makes it simpler to write type safe selectors
+
+Feature Selector ->

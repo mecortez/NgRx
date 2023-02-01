@@ -31,13 +31,20 @@ export const authReducer = createReducer(
     return {
       user: action.user
     }
+  }),
+  on(AuthActions.logout, (state, action) => {
+    return {
+      user: undefined
+    }
   })
 );
+
 /*
   A reducer function that defines the initial authentication state of our application and also defines what the store should do in response to a login action.
   In response to a login action, the store should simply save the user profile in memory so that we can access later.
 */
 
+// A reducer function always returns a new copy of the state and never mutates the existing state
 
 // The reducer function is just a plain function that tells the store what to do in response to a particular action
 
