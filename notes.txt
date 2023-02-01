@@ -18,8 +18,9 @@ Exemplo de comando para criar um store->  ng g store auth/Auth --module auth.mod
 
 Reducer
 a function that calculates a new version of the state based on the previous state and the action that got dispatched
-a funcition that we need to pass to the store so that the store knows how to react to a given action
+a function that we need to pass to the store so that the store knows how to react to a given action
 
+A reducer function always returns a new copy of the state and never mutates the existing state
 
 Store
 it's an in-memory database that contains data that is going to get shared by multiple components of the application.
@@ -45,3 +46,18 @@ a type safe version of the mapping function
 makes it simpler to write type safe selectors
 
 Feature Selector ->
+
+Guard -> a special type of angular service that integrates itself with the angular router
+
+
+Local Storage only storage strings
+
+Side Effects -> something extra we want to do in our application after the action has been dispatched and processed by the store
+to side effects use the tap() operator
+many side effects result in new actions
+
+createEffects
+expects a function that should return an observable
+
+
+STOP THE CLI TO CREATE AN SIDE EFFECT!!!
